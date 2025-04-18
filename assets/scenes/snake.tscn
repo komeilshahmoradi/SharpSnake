@@ -1,0 +1,40 @@
+[gd_scene load_steps=18 format=3 uid="uid://bd05ry3og7tah"]
+
+[ext_resource type="Script" uid="uid://cxw6ghq3ux0i3" path="res://assets/scripts/Snake.cs" id="1_sy68a"]
+[ext_resource type="Texture2D" uid="uid://we42fcws2ywt" path="res://assets/sprites/head_up.png" id="2_me2wh"]
+[ext_resource type="Texture2D" uid="uid://dl8h036br2p61" path="res://assets/sprites/head_down.png" id="3_j7xe6"]
+[ext_resource type="Texture2D" uid="uid://d2s713sfjtvhd" path="res://assets/sprites/head_left.png" id="4_nd4yo"]
+[ext_resource type="Texture2D" uid="uid://cqumn0umrv63t" path="res://assets/sprites/head_right.png" id="5_b51ay"]
+[ext_resource type="Texture2D" uid="uid://cr8emgiebwgpn" path="res://assets/sprites/tail_up.png" id="6_5yfqy"]
+[ext_resource type="Texture2D" uid="uid://cw32uav0uee7o" path="res://assets/sprites/tail_down.png" id="7_fa7bt"]
+[ext_resource type="Texture2D" uid="uid://bxykja07u6xd1" path="res://assets/sprites/tail_left.png" id="8_icycr"]
+[ext_resource type="Texture2D" uid="uid://cv0yeumpbts3v" path="res://assets/sprites/tail_right.png" id="9_xqwkk"]
+[ext_resource type="Texture2D" uid="uid://wj2oesb83rlu" path="res://assets/sprites/body_vertical.png" id="10_qbbkt"]
+[ext_resource type="Texture2D" uid="uid://cyfl5ny2i0om7" path="res://assets/sprites/body_horizontal.png" id="11_nk7db"]
+[ext_resource type="Texture2D" uid="uid://cn4euevx7n770" path="res://assets/sprites/body_topleft.png" id="12_1aabj"]
+[ext_resource type="Texture2D" uid="uid://dwieithjd4v6j" path="res://assets/sprites/body_topright.png" id="13_y6syt"]
+[ext_resource type="Texture2D" uid="uid://e7h2xahnolju" path="res://assets/sprites/body_bottomleft.png" id="14_oiil2"]
+[ext_resource type="Texture2D" uid="uid://bse0bk5nuqvx6" path="res://assets/sprites/body_bottomright.png" id="15_gfv2g"]
+[ext_resource type="Script" uid="uid://c2qxikr4sf48f" path="res://assets/scripts/SnakeSkin.cs" id="16_j7xe6"]
+
+[sub_resource type="Resource" id="Resource_nd4yo"]
+script = ExtResource("16_j7xe6")
+HeadUpTexture = ExtResource("2_me2wh")
+HeadDownTexture = ExtResource("3_j7xe6")
+HeadLeftTexture = ExtResource("4_nd4yo")
+HeadRightTexture = ExtResource("5_b51ay")
+TailUpTexture = ExtResource("6_5yfqy")
+TailDownTexture = ExtResource("7_fa7bt")
+TailLeftTexture = ExtResource("8_icycr")
+TailRightTexture = ExtResource("9_xqwkk")
+BodyVerticalTexture = ExtResource("10_qbbkt")
+BodyHorizontalTexture = ExtResource("11_nk7db")
+BodyTopLeftTexture = ExtResource("12_1aabj")
+BodyTopRightTexture = ExtResource("13_y6syt")
+BodyBottomLeftTexture = ExtResource("14_oiil2")
+BodyBottomRightTexture = ExtResource("15_gfv2g")
+metadata/_custom_type_script = "uid://c2qxikr4sf48f"
+
+[node name="Snake" type="Node2D"]
+script = ExtResource("1_sy68a")
+Skin = SubResource("Resource_nd4yo")

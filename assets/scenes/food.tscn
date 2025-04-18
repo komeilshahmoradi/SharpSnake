@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5sf0ph4op1ro"]
+
+[ext_resource type="Texture2D" uid="uid://bcipojoxoog5h" path="res://assets/sprites/apple.png" id="1_c4b1n"]
+
+[node name="Food" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(20, 20)
+texture = ExtResource("1_c4b1n")

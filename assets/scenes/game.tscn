@@ -1,0 +1,73 @@
+[gd_scene load_steps=7 format=3 uid="uid://cssmbe1jahb0d"]
+
+[ext_resource type="Script" uid="uid://bogexo5bj2fo4" path="res://assets/scripts/Game.cs" id="1_5gf0t"]
+[ext_resource type="PackedScene" uid="uid://b5sf0ph4op1ro" path="res://assets/scenes/food.tscn" id="1_dis88"]
+[ext_resource type="PackedScene" uid="uid://bd05ry3og7tah" path="res://assets/scenes/snake.tscn" id="2_5gf0t"]
+[ext_resource type="AudioStream" uid="uid://cch63rwy4p03v" path="res://assets/audio/apple_bite.mp3" id="4_j62u1"]
+[ext_resource type="AudioStream" uid="uid://bn43poxy8h43h" path="res://assets/audio/background_music.mp3" id="5_5aext"]
+[ext_resource type="AudioStream" uid="uid://basfwe56u71wi" path="res://assets/audio/game_over.mp3" id="6_5aext"]
+
+[node name="Game" type="Node2D" node_paths=PackedStringArray("EatSoundPlayer", "GameOverSoundPlayer", "BackgroundMusicPlayer", "ScoreLabel", "MessageLabel")]
+script = ExtResource("1_5gf0t")
+FoodScene = ExtResource("1_dis88")
+SnakeScene = ExtResource("2_5gf0t")
+EatSoundPlayer = NodePath("apple_bite")
+GameOverSoundPlayer = NodePath("game_over")
+BackgroundMusicPlayer = NodePath("background_music")
+ScoreLabel = NodePath("UI_Layer/ScoreArea/ScoreDisplayLabel")
+MessageLabel = NodePath("UI_Layer/StartMessageArea/MessageDisplayLabel")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="apple_bite" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_j62u1")
+
+[node name="background_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_5aext")
+volume_db = -5.0
+parameters/looping = true
+
+[node name="game_over" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_5aext")
+
+[node name="UI_Layer" type="CanvasLayer" parent="."]
+
+[node name="ScoreArea" type="MarginContainer" parent="UI_Layer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -107.0
+offset_bottom = 40.0
+grow_horizontal = 0
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+
+[node name="ScoreDisplayLabel" type="Label" parent="UI_Layer/ScoreArea"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "SCORE:  0"
+
+[node name="StartMessageArea" type="MarginContainer" parent="UI_Layer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = -11.5
+offset_right = 0.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="MessageDisplayLabel" type="Label" parent="UI_Layer/StartMessageArea"]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
