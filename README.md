@@ -1,2 +1,2 @@
 # SharpSnake
-Snake game in Godot Engine 4.4
+Implementation of Snake game with C# in Godot game engine 4.4
